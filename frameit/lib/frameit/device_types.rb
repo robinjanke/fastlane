@@ -108,6 +108,8 @@ module Frameit
     SAMSUNG_GALAXY_S9 ||= Frameit::Device.new("samsung-galaxy-s9", "Samsung Galaxy S9", 6, [[1440, 2960], [2960, 1440]], 570, Color::MIDNIGHT_BLACK, Platform::ANDROID)
     SAMSUNG_GALAXY_S10 ||= Frameit::Device.new("samsung-galaxy-s10", "Samsung Galaxy S10", 7, [[1440, 3040], [3040, 1440]], 550, Color::PRISM_BLACK, Platform::ANDROID)
     SAMSUNG_GALAXY_S10_PLUS ||= Frameit::Device.new("samsung-galaxy-s10-plus", "Samsung Galaxy S10+", 8, [[1440, 3040], [3040, 1440]], 522, Color::PRISM_BLACK, Platform::ANDROID)
+    SAMSUNG_GALAXY_S21_PLUS ||= Frameit::Device.new("samsung-galaxy-s21-plus", "Samsung Galaxy S21+", 9, [[1180, 2500], [2500, 1180]], 522, Color::BLACK, Platform::ANDROID)
+    GOOGLE_PIXEL_SLATE ||= Frameit::Device.new("google-pixel-slate", "Google Pixel Slate", 1, [[3313, 2304], [2304, 3313]], 522, Color::BLACK, Platform::ANDROID)
     XIAOMI_MI_MIX_ALPHA ||= Frameit::Device.new("xiaomi-mi-mix-alpha", "Xiaomi Mi Mix Alpha", 1, [[2088, 2250], [2250, 2088]], 388, nil, Platform::ANDROID)
     IPHONE_5S ||= Frameit::Device.new("iphone-5s", "Apple iPhone 5s", 2, [[640, 1096], [640, 1136], [1136, 600], [1136, 640]], 326, Color::SPACE_GRAY, Platform::IOS, Deliver::AppScreenshot::ScreenSize::IOS_40, :use_legacy_iphone5s)
     IPHONE_5C ||= Frameit::Device.new("iphone-5c", "Apple iPhone 5c", 2, [[640, 1136], [1136, 640]], 326, Color::WHITE)
