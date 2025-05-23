@@ -304,7 +304,9 @@ module FastlaneCore
     # Runs a given command using backticks (`)
     # and prints them out using the UI.command method
     def self.backticks(command, print: true)
-      UI.command(command) if print
+      puts("DEBUG:")
+      puts(command.to_s)
+      UI.command(command)
       begin
         result = `#{command}`
         UI.command_output(result) if print
