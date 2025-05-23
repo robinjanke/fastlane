@@ -305,9 +305,14 @@ module FastlaneCore
     # and prints them out using the UI.command method
     def self.backticks(command, print: true)
       UI.command(command) if print
-      result = `#{command}`
-      UI.command_output(result) if print
-      return result
+      begin
+        result = `#{command}`
+        UI.command_output(result) if print
+        return result
+      rescue
+        UI.error("Command failed: #{command}")
+        UI.error("Error: #{$!}")
+      end
     end
 
     # removes ANSI colors from string
