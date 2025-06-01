@@ -16,7 +16,7 @@ module Frameit
   # Defaults to latest, might be a time stamp if defined in the Framefile.json
   def self.frames_version
     return @frames_version if @frames_version
-    @frames_version = "latest"
+    @frames_version = "100"
 
     config_files = Dir["./**/Framefile.json"]
     if config_files.count > 0
