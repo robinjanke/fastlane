@@ -138,8 +138,12 @@ module Fastlane
         UI.message("Found #{all_usages.count} existing App Data Usages. Going to delete them to recreate them with the new configuration")
         all_usages.each do |usage|
           UI.message("Deleting App Data Usage: #{usage.category} - #{usage.grouping} -  #{usage.purpose} #{usage.data_protection}")
-          usage.delete!
-          UI.message("Delete Successful")
+          begin
+            usage.delete!
+            UI.message("Delete Successful")
+          rescue Exception => ex
+            UI.warn("Failed to delete App Data Usage: #{usage.category} - #{usage.grouping} -  #{usage.purpose} #{usage.data_protection}")
+          end
         end
 
         usages_config.each do |usage_config|
