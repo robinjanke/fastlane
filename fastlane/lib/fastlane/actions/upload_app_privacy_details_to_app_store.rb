@@ -135,7 +135,13 @@ module Fastlane
 
         # Delete all existing usages for new ones
         all_usages = Spaceship::ConnectAPI::AppDataUsage.all(app_id: app.id, includes: "category,grouping,purpose,dataProtection", limit: 500)
-        all_usages.each(&:delete!)
+        Ui.message("Found #{all_usages.count} existing App Data Usages. Going to delete them to recreate them with the new configuration")
+        all_usages.each do |usage|
+          UI.message("Deleting App Data Usage: #{usage.app_data_usage_category_id} - #{usage.app_data_usage_purpose_id} - #{usage.app_data_usage_data_protection_id}")
+          usage.delete!
+          usage.app_data_usage_category_id
+          Ui.message("Delete Successful")
+        end
 
         usages_config.each do |usage_config|
           category = usage_config["category"]
