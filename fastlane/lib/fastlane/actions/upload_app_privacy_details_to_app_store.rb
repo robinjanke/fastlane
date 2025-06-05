@@ -142,7 +142,7 @@ module Fastlane
             usage.delete!
             UI.message("Delete Successful")
           rescue Exception => ex
-            UI.warn("Failed to delete App Data Usage: #{usage.category} - #{usage.grouping} -  #{usage.purpose} #{usage.data_protection}")
+            UI.message("WARN: Failed to delete App Data Usage: #{usage.category} - #{usage.grouping} -  #{usage.purpose} #{usage.data_protection}")
           end
         end
 
